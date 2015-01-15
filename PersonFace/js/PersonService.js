@@ -1,6 +1,6 @@
+'use strict'
 personApp.factory('PersonService', ['$q', '$http', '$resource', 'baseUrl', function ($q, $http, $resource, baseUrl) {
 
-    //var personUrl = baseUrl;
     var personResource = $resource(baseUrl, null, {
         getAll: {method: 'GET', isArray: false},
         create: {method: 'POST'}
@@ -18,8 +18,8 @@ personApp.factory('PersonService', ['$q', '$http', '$resource', 'baseUrl', funct
                     deferred.reject(error);
                 });
             return deferred.promise;
-        }
-        ,
+        },
+
         get: function () {
             return personResource.getAll().$promise;
         },
@@ -37,10 +37,10 @@ personApp.factory('PersonService', ['$q', '$http', '$resource', 'baseUrl', funct
                 });
             return deferred.promise;
         },
+
         createPerson: function (person) {
-            // return personResource.create({}, person).$promise;
             var deferred = $q.defer();
-            $http.post(baseUrl , person)
+            $http.post(baseUrl, person)
                 .success(
                 function (data) {
                     deferred.resolve(data);
@@ -52,6 +52,7 @@ personApp.factory('PersonService', ['$q', '$http', '$resource', 'baseUrl', funct
             return deferred.promise;
 
         },
+
         editPerson: function (person) {
             var deferred = $q.defer();
             $http.put(baseUrl + '/' + person.personId, person)
@@ -65,6 +66,7 @@ personApp.factory('PersonService', ['$q', '$http', '$resource', 'baseUrl', funct
                 });
             return deferred.promise;
         },
+
         deletePerson: function (personId) {
             var deferred = $q.defer();
             $http.delete(baseUrl + '/' + personId)
@@ -78,6 +80,7 @@ personApp.factory('PersonService', ['$q', '$http', '$resource', 'baseUrl', funct
                 });
             return deferred.promise;
         },
+
         searchByName: function (name) {
             var deferred = $q.defer();
             $http.get(baseUrl + '/search/findByFullNameContains?fullName=' + name)

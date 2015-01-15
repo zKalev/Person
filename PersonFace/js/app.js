@@ -1,10 +1,6 @@
 'use strict'
-var personApp = angular.module('personApp', ['ngRoute', 'spring-data-rest']).config(['$routeProvider', 'SpringDataRestAdapterProvider', function ($routeProvider, SpringDataRestAdapterProvider) {
-    //SpringDataRestAdapterProvider.config({
-    //    'resourcesFunction': function (url, paramDefaults, actions, options) {
-    //        // do the call to the backend and return your desired object
-    //    }
-    //});
+var personApp = angular.module('personApp', ['ngRoute','ngResource']).config(['$routeProvider', function ($routeProvider) {
+
     $routeProvider.when('/', {
         templateUrl: './views/partials/home.html',
         controller: 'PersonCtrl'
@@ -19,7 +15,6 @@ var personApp = angular.module('personApp', ['ngRoute', 'spring-data-rest']).con
         templateUrl: './views/partials/new.html',
         controller: 'PersonCtrl'
     })
-
         .otherwise({redirectTo: '/'});
 
 }]).run(function () {

@@ -1,6 +1,7 @@
 'use strict'
 personApp.controller('PersonCtrl', ['$scope', '$location', '$routeParams', 'PersonService', 'NotificationService',
     function ($scope, $location, $routeParams, PersonService, NotificationService) {
+
         $scope.emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         $scope.namePattern = /^[a-zA-Zа-яА-Я ]*$/
 
@@ -25,8 +26,7 @@ personApp.controller('PersonCtrl', ['$scope', '$location', '$routeParams', 'Pers
                     }
                 }, function (error) {
 
-                }
-            )
+                });
         }
 
         $scope.searchName;
