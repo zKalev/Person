@@ -1,3 +1,6 @@
+create database Person;
+use Person;
+
 create table person(ID int(10) not null auto_increment,FULL_NAME varchar(90) not null,PIN varchar(10),EMAIL varchar(40),primary key (ID))
 ENGINE = MYISAM;
 
