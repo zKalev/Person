@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row margin-bottom-15px">
+        <div class="col-md-offset-3 col-md-8 text-center">
+            <div class="table-responsive">
+            <table class="table-bordered">
+                <thead>
+                <th>Name</th>
+                <th>Pin</th>
+                <th>Email</th>
+                <th>Action</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="person in people">
+                    <td><output><strong>{{person.fullName}}</strong></output></td>
+                    <td><output><strong>{{person.pin}}</strong></output></td>
+                    <td><output><strong>{{person.email}}</strong></output></td>
+                    <td>
+                        <a ng-click="navigateToEdit(person)">Edit</a>
+                        <a ng-click="navigateToDelete(person)">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-3">
+            <div class="pull-right">
+                <label for="search" class="inline-element">Search</label>
+                <input id="search" ng-model="searchName"   class="form-control  border-black inline-element width-70pc "/>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <button class="btn-default btn-lg" ng-click="$location.path('/person/new')">Add Person</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

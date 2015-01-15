@@ -1,0 +1,48 @@
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+.margin-left-30px {
+    margin-left: 60px;
+}
+
+.margin-bottom-15px {
+    margin-bottom: 15px;
+}
+
+.inline-element {
+    display: inline-block;
+}
+
+.width-70pc {
+    width: 70%;
+
+}
+
+.margin-top-05px {
+    margin-top: 5px;
+}
+
+.margin-top-10px {
+    margin-top: 10px;
+}
+
+.ng-invalid.ng-dirty {
+    border-width: 3px;
+    border-color: red;
+}
+
+.ng-valid.ng-dirty {
+    border-width: 3px;
+    border-color: green;
+}
+
+.border-black{
+    border-color: black;
+    border-width: 1px;
+}

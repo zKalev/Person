@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row margin-bottom-15px">
+        <div class="col-md-offset-3 col-md-6">
+            <label for="input-name">Name</label>
+            <input id="input-name" ng-model="currentPerson.fullName" class="form-control" type="text"/>
+            <label for="input-pin">Pin</label>
+            <input id="input-pin" ng-model="currentPerson.pin" class="form-control" type="text"/>
+            <label for="input-email">Email</label>
+            <input id="input-email" ng-model="currentPerson.email" class="form-control" type="text"/>
+
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-5 col-md-5">
+            <button class="btn-default btn-lg" ng-click="deletePerson(currentPerson)">Delete</button>
+            <button class="btn-default btn-lg" ng-click="$location.path('/')">Cancel</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
+</div>

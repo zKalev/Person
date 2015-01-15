@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row margin-bottom-15px">
+        <div class="col-md-offset-3 col-md-6">
+            <form novalidate name="createForm">
+                <label for="input-name">Name*</label>
+                <input id="input-name" ng-pattern="namePattern" required ng-model="person.fullName"
+                       class="form-control" type="text"/>
+                <label for="input-pin">Pin* </label> (note: pin is a ten digit number)
+                <input id="input-pin" type="number" ng-minlength="10" ng-maxlength="10" required ng-model="person.pin"
+                       class="form-control"/>
+                <label for="input-email">Email*</label>
+                <input id="input-email" required ng-pattern="emailPattern" ng-model="person.email" class="form-control"
+                       type="text"/>
+            </form>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-5 col-md-5">
+            <button class="btn-default btn-lg" ng-click="createForm.$valid && createNewPerson(person)">Create</button>
+            <button class="btn-default btn-lg" ng-click="$location.path('/')">Cancel</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
+</div>
